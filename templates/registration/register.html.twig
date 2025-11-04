@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f5f5f5;
+        }
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            width: 320px;
+        }
+        input, button {
+            display: block;
+            margin-bottom: 1rem;
+            width: 100%;
+            padding: 0.5rem;
+        }
+        button {
+            background-color: #4A76A8;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post">
+        <h2>Sign Up</h2>
+
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword.first) }}
+        {{ form_row(registrationForm.plainPassword.second) }}
+        <button type="submit">Register</button>
+        {{ form_end(registrationForm) }}
+
+        <p style="text-align:center;margin-top:10px;">
+            Already have an account? <a href="{{ path('app_login') }}">Login</a>
+        </p>
+    </form>
+
+</body>
+</html>

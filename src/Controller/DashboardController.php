@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class DashboardController extends AbstractController
+{
+    #[Route('/dashboard', name: 'app_dashboard')]
+    public function index(): Response
+    {
+        // Only authenticated users with ROLE_USER can access this route
+        return new Response("Welcome to the dashboard! (Protected Area)");
+    }
+}
