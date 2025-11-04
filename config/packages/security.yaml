@@ -3,6 +3,8 @@ security:
         App\Entity\User:
             algorithm: auto
 
+    access_denied_url: /access-denied
+
     providers:
         app_user_provider:
             entity:
